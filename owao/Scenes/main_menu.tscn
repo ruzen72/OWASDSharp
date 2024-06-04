@@ -1,0 +1,309 @@
+[gd_scene load_steps=18 format=3 uid="uid://c77mel3ucbbbu"]
+
+[ext_resource type="FontFile" uid="uid://cd81oo8qee17e" path="res://Fonts/CutiveMono-Regular.ttf" id="2_p4ygt"]
+[ext_resource type="Script" path="res://Code/Main_Menu_Buttons.cs" id="3_q3n2f"]
+[ext_resource type="Script" path="res://Code/Night_Menu_selector.cs" id="4_q1pns"]
+[ext_resource type="Script" path="res://Code/Options_Menu.cs" id="5_sgbwa"]
+[ext_resource type="AudioStream" uid="uid://xhtb0kyuu806" path="res://Music/ШАМПУНСКИЙ ДЕМОН.mp3" id="6_4fctf"]
+[ext_resource type="Texture2D" uid="uid://c4r4lu10uit1g" path="res://Sprites/photo_2024-05-01_09-52-21.jpg" id="6_g5i2g"]
+[ext_resource type="AudioStream" uid="uid://bsxjwmb1syq3q" path="res://Music/zvuk11.mp3" id="7_0j0yr"]
+[ext_resource type="Texture2D" uid="uid://bfxs3gfgt5d7w" path="res://Sprites/S/помеха1.png" id="8_18ojh"]
+[ext_resource type="Texture2D" uid="uid://5m5cv3uuaugu" path="res://Sprites/S/помеха2.png" id="9_dm7se"]
+[ext_resource type="Texture2D" uid="uid://de5v5p7pl3e3b" path="res://Sprites/S/помеха3.png" id="10_6w41r"]
+[ext_resource type="Texture2D" uid="uid://d3h6fwtibr4r1" path="res://Sprites/S/помеха4.png" id="11_inl0p"]
+[ext_resource type="Texture2D" uid="uid://cwfqxxywa3wuk" path="res://Sprites/S/помеха5.png" id="12_swpu6"]
+[ext_resource type="Texture2D" uid="uid://3c3dculxi0sl" path="res://Sprites/S/помеха6.png" id="13_aa73t"]
+[ext_resource type="Texture2D" uid="uid://dkfrkoi76hij1" path="res://Sprites/S/помеха7.png" id="14_4fook"]
+[ext_resource type="Texture2D" uid="uid://ct3mwdgi2jpbg" path="res://Sprites/S/помеха8.png" id="15_ksqth"]
+
+[sub_resource type="GDScript" id="GDScript_t7632"]
+script/source = "extends Node2D
+
+func _on_night_1_button_button_up():
+		get_tree().change_scene_to_file(\"res://Scenes/game.tscn\")
+"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vv5h5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_18ojh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_dm7se")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6w41r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_inl0p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_swpu6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_aa73t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_4fook")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ksqth")
+}],
+"loop": true,
+"name": &"default",
+"speed": 60.0
+}]
+
+[node name="Main_menu" type="Node2D"]
+script = SubResource("GDScript_t7632")
+
+[node name="Game_Name" type="Label" parent="."]
+z_index = 1
+offset_left = 79.0
+offset_top = 71.0
+offset_right = 905.0
+offset_bottom = 296.0
+theme_override_fonts/font = ExtResource("2_p4ygt")
+theme_override_font_sizes/font_size = 100
+text = "One Week at 
+Shampoo Demon"
+
+[node name="Game_Version" type="Label" parent="."]
+z_index = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 1751.0
+offset_top = 1008.0
+offset_right = 1901.0
+offset_bottom = 1064.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.913725, 0.913725, 0.913725, 1)
+theme_override_fonts/font = ExtResource("2_p4ygt")
+theme_override_font_sizes/font_size = 50
+text = "v0.1 C# "
+
+[node name="Main_Menu_Buttons" type="VBoxContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 88.0
+offset_top = 362.0
+offset_right = 411.0
+offset_bottom = 646.0
+grow_horizontal = 0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+script = ExtResource("3_q3n2f")
+
+[node name="PlayButton" type="Button" parent="Main_Menu_Buttons"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_p4ygt")
+theme_override_font_sizes/font_size = 75
+text = "Play"
+flat = true
+alignment = 0
+
+[node name="OptionsButton" type="Button" parent="Main_Menu_Buttons"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_p4ygt")
+theme_override_font_sizes/font_size = 75
+text = "Options"
+flat = true
+
+[node name="QuitButton" type="Button" parent="Main_Menu_Buttons"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_p4ygt")
+theme_override_font_sizes/font_size = 75
+text = "Quit"
+flat = true
+alignment = 0
+
+[node name="Night_Menu_selector" type="VBoxContainer" parent="."]
+visible = false
+offset_left = 83.0
+offset_top = 362.0
+offset_right = 623.0
+offset_bottom = 910.0
+theme_override_constants/separation = 10
+script = ExtResource("4_q1pns")
+
+[node name="Night_Label" type="Label" parent="Night_Menu_selector"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_p4ygt")
+theme_override_font_sizes/font_size = 75
+text = "Select Night"
+horizontal_alignment = 1
+
+[node name="Night_1_Button" type="Button" parent="Night_Menu_selector"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_p4ygt")
+theme_override_font_sizes/font_size = 50
+text = "Night 1"
+flat = true
+alignment = 0
+
+[node name="Night_2_Button" type="Button" parent="Night_Menu_selector"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_p4ygt")
+theme_override_font_sizes/font_size = 50
+disabled = true
+text = "Night 2"
+flat = true
+alignment = 0
+
+[node name="Night_3_Button" type="Button" parent="Night_Menu_selector"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_p4ygt")
+theme_override_font_sizes/font_size = 50
+disabled = true
+text = "Night 3"
+flat = true
+alignment = 0
+
+[node name="Night_4_Button" type="Button" parent="Night_Menu_selector"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_p4ygt")
+theme_override_font_sizes/font_size = 50
+disabled = true
+text = "Night 4"
+flat = true
+alignment = 0
+
+[node name="Night_5_Button" type="Button" parent="Night_Menu_selector"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_p4ygt")
+theme_override_font_sizes/font_size = 50
+disabled = true
+text = "Night 5"
+flat = true
+alignment = 0
+
+[node name="Night_6_Button" type="Button" parent="Night_Menu_selector"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_p4ygt")
+theme_override_font_sizes/font_size = 50
+disabled = true
+text = "Night 6"
+flat = true
+alignment = 0
+
+[node name="Night_7_Button" type="Button" parent="Night_Menu_selector"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_p4ygt")
+theme_override_font_sizes/font_size = 50
+disabled = true
+text = "Night 7"
+flat = true
+alignment = 0
+
+[node name="BackButton" type="Button" parent="Night_Menu_selector"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_p4ygt")
+theme_override_font_sizes/font_size = 75
+text = "Back"
+flat = true
+alignment = 0
+text_direction = 1
+
+[node name="Options_Menu" type="VBoxContainer" parent="."]
+visible = false
+offset_left = 85.0
+offset_top = 347.0
+offset_right = 512.0
+offset_bottom = 687.0
+theme_override_constants/separation = 10
+script = ExtResource("5_sgbwa")
+
+[node name="Options_Label" type="Label" parent="Options_Menu"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_p4ygt")
+theme_override_font_sizes/font_size = 75
+text = "Options"
+horizontal_alignment = 1
+
+[node name="Vsync_Button" type="CheckButton" parent="Options_Menu"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_p4ygt")
+theme_override_font_sizes/font_size = 50
+button_pressed = true
+text = "Vsync"
+flat = true
+
+[node name="Fullscreen_button" type="CheckButton" parent="Options_Menu"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_p4ygt")
+theme_override_font_sizes/font_size = 50
+button_pressed = true
+text = "Fullscreen"
+flat = true
+
+[node name="OptionButton" type="OptionButton" parent="Options_Menu"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_p4ygt")
+theme_override_font_sizes/font_size = 50
+flat = true
+item_count = 3
+selected = 1
+popup/item_0/text = "16:9"
+popup/item_0/id = 0
+popup/item_0/separator = true
+popup/item_1/text = "1920x1080"
+popup/item_1/id = 1
+popup/item_2/text = "1152x648"
+popup/item_2/id = 2
+
+[node name="Back" type="Button" parent="Options_Menu"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_p4ygt")
+theme_override_font_sizes/font_size = 75
+text = "Back"
+flat = true
+alignment = 0
+
+[node name="Buttons_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_0j0yr")
+volume_db = -20.0
+bus = &"Sound"
+
+[node name="Music_Menu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_4fctf")
+volume_db = -20.0
+autoplay = true
+bus = &"Music"
+
+[node name="Background1" type="Sprite2D" parent="."]
+z_index = -2
+texture_filter = 1
+position = Vector2(1399, 547)
+texture = ExtResource("6_g5i2g")
+
+[node name="Background" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.454902)
+z_index = -1
+texture_filter = 1
+texture_repeat = 3
+position = Vector2(960, 540)
+scale = Vector2(1.33287, 1.50385)
+sprite_frames = SubResource("SpriteFrames_vv5h5")
+autoplay = "default"
+frame_progress = 0.221074
+
+[connection signal="button_up" from="Main_Menu_Buttons/PlayButton" to="Main_Menu_Buttons" method="_on_play_button_button_up"]
+[connection signal="button_up" from="Main_Menu_Buttons/PlayButton" to="Night_Menu_selector" method="_on_play_button_button_up"]
+[connection signal="button_up" from="Main_Menu_Buttons/OptionsButton" to="Main_Menu_Buttons" method="_on_options_button_button_up"]
+[connection signal="button_up" from="Main_Menu_Buttons/OptionsButton" to="Options_Menu" method="_on_options_button_button_up"]
+[connection signal="button_up" from="Main_Menu_Buttons/QuitButton" to="Main_Menu_Buttons" method="_on_quit_button_button_up"]
+[connection signal="button_up" from="Night_Menu_selector/Night_1_Button" to="." method="_on_night_1_button_button_up"]
+[connection signal="button_up" from="Night_Menu_selector/BackButton" to="Main_Menu_Buttons" method="_on_back_button_button_up"]
+[connection signal="button_up" from="Night_Menu_selector/BackButton" to="Night_Menu_selector" method="_on_back_button_button_up"]
+[connection signal="button_up" from="Options_Menu/Vsync_Button" to="Options_Menu" method="_on_check_button_button_up"]
+[connection signal="button_up" from="Options_Menu/Fullscreen_button" to="Options_Menu" method="_on_fullscreen_button_button_up"]
+[connection signal="item_selected" from="Options_Menu/OptionButton" to="Options_Menu" method="_on_option_button_item_selected"]
+[connection signal="button_up" from="Options_Menu/Back" to="Main_Menu_Buttons" method="_on_back_button_up"]
+[connection signal="button_up" from="Options_Menu/Back" to="Options_Menu" method="_on_back_button_up"]

@@ -1,0 +1,47 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="OWASDsharp"
+config/version="0.1"
+run/main_scene="res://Scenes/main_menu.tscn"
+config/features=PackedStringArray("4.2", "C#", "Mobile")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="res://Sprites/5.png"
+config/icon="res://Sprites/Icon_game.png"
+
+[autoload]
+
+OptionsSave="*res://Autoload/options_save.cs"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
+window/size/resizable=false
+
+[dotnet]
+
+project/assembly_name="OWASDsharp"
+
+[file_customization]
+
+folder_colors={
+"res://Fonts/": "teal",
+"res://Music/": "purple",
+"res://Sprites/": "orange"
+}
+
+[rendering]
+
+renderer/rendering_method="mobile"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
