@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c77mel3ucbbbu"]
+[gd_scene load_steps=24 format=3 uid="uid://c77mel3ucbbbu"]
 
 [ext_resource type="FontFile" uid="uid://cd81oo8qee17e" path="res://Fonts/CutiveMono-Regular.ttf" id="2_p4ygt"]
 [ext_resource type="Script" path="res://Code/Main_Menu_Buttons.cs" id="3_q3n2f"]
@@ -22,6 +22,18 @@ script/source = "extends Node2D
 func _on_night_1_button_button_up():
 		get_tree().change_scene_to_file(\"res://Scenes/game.tscn\")
 "
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_woaoh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fenls"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1j8wr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_is0e4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xcav4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ierln"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vv5h5"]
 animations = [{
@@ -105,6 +117,7 @@ script = ExtResource("3_q3n2f")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_p4ygt")
 theme_override_font_sizes/font_size = 75
+theme_override_styles/focus = SubResource("StyleBoxEmpty_woaoh")
 text = "Play"
 flat = true
 alignment = 0
@@ -113,6 +126,7 @@ alignment = 0
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_p4ygt")
 theme_override_font_sizes/font_size = 75
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fenls")
 text = "Options"
 flat = true
 
@@ -120,6 +134,7 @@ flat = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_p4ygt")
 theme_override_font_sizes/font_size = 75
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1j8wr")
 text = "Quit"
 flat = true
 alignment = 0
@@ -231,6 +246,7 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_p4ygt")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_is0e4")
 button_pressed = true
 text = "Vsync"
 flat = true
@@ -239,6 +255,7 @@ flat = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_p4ygt")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xcav4")
 button_pressed = true
 text = "Fullscreen"
 flat = true
@@ -247,6 +264,7 @@ flat = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_p4ygt")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ierln")
 flat = true
 item_count = 3
 selected = 1

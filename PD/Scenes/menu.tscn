@@ -1,0 +1,142 @@
+[gd_scene load_steps=8 format=3 uid="uid://ctshdy8b2fkgx"]
+
+[ext_resource type="Texture2D" uid="uid://xcqioy5p16w1" path="res://Content/Sprites/Background.jpg" id="1_2q81y"]
+[ext_resource type="Script" path="res://Code/MainMenu.gd" id="1_8fdlr"]
+[ext_resource type="Theme" uid="uid://hihpvr04vvt0" path="res://Content/Standart.tres" id="2_gbvuh"]
+[ext_resource type="FontFile" uid="uid://c4enxp85lcrqu" path="res://Content/Fonts/Inky Thin Pixels (ECAL BY MONKEYBOY50)/Inky-Thin-Pixels_0.ttf" id="3_ticv4"]
+[ext_resource type="Script" path="res://Code/MenuButtons.gd" id="4_cfmfr"]
+[ext_resource type="AudioStream" uid="uid://dfhycucgshrhb" path="res://Content/Music/1245799_Pixel-Dust.mp3" id="6_eos7v"]
+[ext_resource type="Script" path="res://Code/Options_Buttons.gd" id="7_detjm"]
+
+[node name="Menu" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_8fdlr")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(960.001, 540)
+scale = Vector2(0.999999, 1)
+texture = ExtResource("1_2q81y")
+
+[node name="Menu_Background" type="ColorRect" parent="."]
+offset_left = 190.0
+offset_top = 6.0
+offset_right = 919.0
+offset_bottom = 1086.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0, 0, 0, 0.807843)
+
+[node name="Game_Name" type="Label" parent="Menu_Background"]
+layout_mode = 0
+offset_left = -128.0
+offset_top = 134.0
+offset_right = 918.0
+offset_bottom = 360.0
+theme = ExtResource("2_gbvuh")
+theme_override_fonts/font = ExtResource("3_ticv4")
+theme_override_font_sizes/font_size = 150
+text = "Planets Destroyer"
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+texture_filter = 1
+offset_left = 378.0
+offset_top = 360.0
+offset_right = 739.0
+offset_bottom = 862.0
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+script = ExtResource("4_cfmfr")
+
+[node name="Play_button" type="Button" parent="Buttons"]
+layout_mode = 2
+theme = ExtResource("2_gbvuh")
+theme_override_fonts/font = ExtResource("3_ticv4")
+theme_override_font_sizes/font_size = 125
+text = "Play"
+flat = true
+
+[node name="Options_button" type="Button" parent="Buttons"]
+layout_mode = 2
+theme = ExtResource("2_gbvuh")
+theme_override_fonts/font = ExtResource("3_ticv4")
+theme_override_font_sizes/font_size = 125
+text = "Options"
+flat = true
+
+[node name="Quit_button" type="Button" parent="Buttons"]
+layout_mode = 2
+theme = ExtResource("2_gbvuh")
+theme_override_fonts/font = ExtResource("3_ticv4")
+theme_override_font_sizes/font_size = 125
+text = "Quit"
+flat = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_eos7v")
+autoplay = true
+bus = &"Music"
+
+[node name="Options_Buttons" type="VBoxContainer" parent="."]
+visible = false
+offset_left = 371.0
+offset_top = 330.0
+offset_right = 750.0
+offset_bottom = 943.0
+theme_override_constants/separation = 50
+script = ExtResource("7_detjm")
+
+[node name="Options_Label" type="Label" parent="Options_Buttons"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ticv4")
+theme_override_font_sizes/font_size = 135
+text = "Options"
+horizontal_alignment = 1
+
+[node name="Fullscreen_Button" type="CheckButton" parent="Options_Buttons"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ticv4")
+theme_override_font_sizes/font_size = 75
+text = "FullScreen"
+flat = true
+alignment = 1
+
+[node name="Change_Language_Button" type="OptionButton" parent="Options_Buttons"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ticv4")
+theme_override_font_sizes/font_size = 100
+flat = true
+alignment = 1
+item_count = 2
+selected = 0
+popup/item_0/text = "Русский"
+popup/item_0/id = 0
+popup/item_1/text = "English"
+popup/item_1/id = 1
+
+[node name="Quit_For_Options" type="Button" parent="Options_Buttons"]
+layout_mode = 2
+theme = ExtResource("2_gbvuh")
+theme_override_fonts/font = ExtResource("3_ticv4")
+theme_override_font_sizes/font_size = 125
+text = "Back"
+flat = true
+
+[node name="Black_Flash" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[connection signal="button_up" from="Buttons/Options_button" to="Buttons" method="_on_options_button_button_up"]
+[connection signal="button_up" from="Buttons/Options_button" to="Options_Buttons" method="_on_options_button_button_up"]
+[connection signal="button_up" from="Buttons/Quit_button" to="Buttons" method="_on_quit_button_button_up"]
+[connection signal="button_up" from="Options_Buttons/Quit_For_Options" to="Buttons" method="_on_quit_for_options_button_up"]
+[connection signal="button_up" from="Options_Buttons/Quit_For_Options" to="Options_Buttons" method="_on_quit_for_options_button_up"]
