@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dckby3o1wh3ip" path="res://Sprites/t/3434_negate-removebg-preview.png" id="7_xw0p0"]
 [ext_resource type="AudioStream" uid="uid://bsxjwmb1syq3q" path="res://Music/zvuk11.mp3" id="9_wp0hr"]
 [ext_resource type="FontFile" uid="uid://cd81oo8qee17e" path="res://Fonts/CutiveMono-Regular.ttf" id="9_y1mc2"]
-[ext_resource type="Script" path="res://Scenes/Door.cs" id="11_g7hb8"]
+[ext_resource type="Script" path="res://Code/Door.cs" id="11_g7hb8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vq267"]
 
@@ -88,6 +88,7 @@ color = Color(0.252028, 0.252028, 0.252028, 1)
 
 [node name="Camera_Output" type="Sprite2D" parent="UI"]
 visible = false
+top_level = true
 position = Vector2(959.5, 521)
 scale = Vector2(1.50078, 1.5)
 texture = ExtResource("6_6qc5y")
@@ -219,7 +220,7 @@ offset_right = 1230.0
 offset_bottom = 660.0
 theme_override_fonts/font = ExtResource("9_y1mc2")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_aik5l")
-text = "door open/close"
+flat = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="mouse_entered" from="UI/Cameras_Button" to="UI" method="_on_cameras_button_mouse_entered"]
