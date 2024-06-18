@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c77mel3ucbbbu"]
+[gd_scene load_steps=32 format=3 uid="uid://c77mel3ucbbbu"]
 
 [ext_resource type="FontFile" uid="uid://cd81oo8qee17e" path="res://Fonts/CutiveMono-Regular.ttf" id="2_p4ygt"]
 [ext_resource type="Script" path="res://Code/Main_Menu_Buttons.cs" id="3_q3n2f"]
@@ -28,6 +28,22 @@ func _on_night_1_button_button_up():
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fenls"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1j8wr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5x2um"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gtdy2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_moknh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wott4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hke1f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4siej"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_038rs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x6pei"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_is0e4"]
 
@@ -159,6 +175,7 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_p4ygt")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5x2um")
 text = "Night 1"
 flat = true
 alignment = 0
@@ -167,6 +184,7 @@ alignment = 0
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_p4ygt")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gtdy2")
 disabled = true
 text = "Night 2"
 flat = true
@@ -176,6 +194,7 @@ alignment = 0
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_p4ygt")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_moknh")
 disabled = true
 text = "Night 3"
 flat = true
@@ -185,6 +204,7 @@ alignment = 0
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_p4ygt")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wott4")
 disabled = true
 text = "Night 4"
 flat = true
@@ -194,6 +214,7 @@ alignment = 0
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_p4ygt")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hke1f")
 disabled = true
 text = "Night 5"
 flat = true
@@ -203,6 +224,7 @@ alignment = 0
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_p4ygt")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4siej")
 disabled = true
 text = "Night 6"
 flat = true
@@ -212,6 +234,7 @@ alignment = 0
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_p4ygt")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_038rs")
 disabled = true
 text = "Night 7"
 flat = true
@@ -221,6 +244,7 @@ alignment = 0
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_p4ygt")
 theme_override_font_sizes/font_size = 75
+theme_override_styles/focus = SubResource("StyleBoxEmpty_x6pei")
 text = "Back"
 flat = true
 alignment = 0
@@ -251,7 +275,7 @@ button_pressed = true
 text = "Vsync"
 flat = true
 
-[node name="Fullscreen_button" type="CheckButton" parent="Options_Menu"]
+[node name="Fullscreen_Button" type="CheckButton" parent="Options_Menu"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_p4ygt")
 theme_override_font_sizes/font_size = 50
@@ -260,21 +284,15 @@ button_pressed = true
 text = "Fullscreen"
 flat = true
 
-[node name="OptionButton" type="OptionButton" parent="Options_Menu"]
+[node name="Resolution_Button" type="OptionButton" parent="Options_Menu"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_p4ygt")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ierln")
 flat = true
-item_count = 3
-selected = 1
-popup/item_0/text = "16:9"
-popup/item_0/id = 0
-popup/item_0/separator = true
-popup/item_1/text = "1920x1080"
-popup/item_1/id = 1
-popup/item_2/text = "1152x648"
-popup/item_2/id = 2
+item_count = 1
+popup/item_0/text = "1920x1080"
+popup/item_0/id = 1
 
 [node name="Back" type="Button" parent="Options_Menu"]
 layout_mode = 2
@@ -321,7 +339,7 @@ frame_progress = 0.221074
 [connection signal="button_up" from="Night_Menu_selector/BackButton" to="Main_Menu_Buttons" method="_on_back_button_button_up"]
 [connection signal="button_up" from="Night_Menu_selector/BackButton" to="Night_Menu_selector" method="_on_back_button_button_up"]
 [connection signal="button_up" from="Options_Menu/Vsync_Button" to="Options_Menu" method="_on_check_button_button_up"]
-[connection signal="button_up" from="Options_Menu/Fullscreen_button" to="Options_Menu" method="_on_fullscreen_button_button_up"]
-[connection signal="item_selected" from="Options_Menu/OptionButton" to="Options_Menu" method="_on_option_button_item_selected"]
+[connection signal="button_up" from="Options_Menu/Fullscreen_Button" to="Options_Menu" method="_on_fullscreen_button_button_up"]
+[connection signal="item_selected" from="Options_Menu/Resolution_Button" to="Options_Menu" method="_on_option_button_item_selected"]
 [connection signal="button_up" from="Options_Menu/Back" to="Main_Menu_Buttons" method="_on_back_button_up"]
 [connection signal="button_up" from="Options_Menu/Back" to="Options_Menu" method="_on_back_button_up"]

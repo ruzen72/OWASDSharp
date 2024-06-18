@@ -3,7 +3,6 @@ using System;
 
 public partial class Options_Menu : VBoxContainer
 {
-	#region
 	private void _on_options_button_button_up()
 	{
 		ShowOptionsMenuButtons();
@@ -17,35 +16,34 @@ public partial class Options_Menu : VBoxContainer
 	
 	private void _on_check_button_button_up()
 	{
-        
-        GetNode<AudioStreamPlayer>($"../Buttons_Sound").Play();
+		
+		GetNode<AudioStreamPlayer>($"../Buttons_Sound").Play();
 	}
 	
 	private void _on_option_button_item_selected(long index)
-	{
+	{	
+		GetNode<AudioStreamPlayer>($"../Buttons_Sound").Play();
 		switch(index)
 		{
 			case 1:
 				GD.Print("1920x1080 set");
-                GetNode<AudioStreamPlayer>($"../Buttons_Sound").Play();
-                break;
+				break;
 
 			case 2:
 				GD.Print("1252x648 set");
-                GetNode<AudioStreamPlayer>($"../Buttons_Sound").Play();
-                break;
-        }
+				break;
+		}
 	}
 
+	//Vector2D[] resolutions = new string[7]{"1920x1080", "800x600"}; 
 	private void _on_fullscreen_button_button_up()
 	{
-        GetNode<AudioStreamPlayer>($"../Buttons_Sound").Play();
-    }
+		GetNode<AudioStreamPlayer>($"../Buttons_Sound").Play();
+	}
 
-    void HideOptionsMenuButtons() { Visible = false; }
+	void HideOptionsMenuButtons() { Visible = false; }
 	void ShowOptionsMenuButtons() { Visible = true; }
 }
-#endregion
 
 
 
