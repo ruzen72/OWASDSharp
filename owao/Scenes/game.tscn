@@ -197,6 +197,7 @@ volume_db = -28.108
 bus = &"Sound"
 
 [node name="Noise_Indicator" type="ProgressBar" parent="UI"]
+layout_mode = 0
 offset_left = 12.0
 offset_top = 1015.0
 offset_right = 355.0
@@ -219,6 +220,7 @@ theme_override_font_sizes/font_size = 35
 text = "Noise"
 
 [node name="Door_Button" type="Button" parent="UI"]
+layout_mode = 0
 offset_left = 681.0
 offset_top = 206.0
 offset_right = 1231.0
