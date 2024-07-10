@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3h6fwtibr4r1"
-path="res://.godot/imported/помеха4.png-f4450d5a447e9407520cc1858384708b.ctex"
+uid="uid://bfxs3gfgt5d7w"
+path="res://.godot/imported/помеха1.png-ef4ef7b5ca710b78209581dd5b260f79.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/S/помеха4.png"
-dest_files=["res://.godot/imported/помеха4.png-f4450d5a447e9407520cc1858384708b.ctex"]
+source_file="res://Sprites/Помехи/помеха1.png"
+dest_files=["res://.godot/imported/помеха1.png-ef4ef7b5ca710b78209581dd5b260f79.ctex"]
 
 [params]
 

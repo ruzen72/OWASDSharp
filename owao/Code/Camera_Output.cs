@@ -9,13 +9,13 @@ public partial class Camera_Output : Sprite2D
 	
 	public override void _Ready()
 	{
-		cameraTextures[0] = (Texture2D)ResourceLoader.Load("res://Sprites/t/camera 1.jpg");
-		cameraTextures[1] = (Texture2D)ResourceLoader.Load("res://Sprites/t/camera 2.jpg");
-		cameraTextures[2] = (Texture2D)ResourceLoader.Load("res://Sprites/t/camera 3.jpg");
-		cameraTextures[3] = (Texture2D)ResourceLoader.Load("res://Sprites/t/camera 4.jpg");
-		cameraTextures[4] = (Texture2D)ResourceLoader.Load("res://Sprites/t/camera 5.jpg");
-		cameraTextures[5] = (Texture2D)ResourceLoader.Load("res://Sprites/t/camera_remastered_6.jpg");
-		cameraTextures[6] = (Texture2D)ResourceLoader.Load("res://Sprites/t/camera 7.jpg");
+		cameraTextures[0] = (Texture2D)ResourceLoader.Load("res://Sprites/Камеры/camera 1.jpg");
+		cameraTextures[1] = (Texture2D)ResourceLoader.Load("res://Sprites/Камеры/camera 2.jpg");
+		cameraTextures[2] = (Texture2D)ResourceLoader.Load("res://Sprites/Камеры/camera 3.jpg");
+		cameraTextures[3] = (Texture2D)ResourceLoader.Load("res://Sprites/Камеры/camera 4.jpg");
+		cameraTextures[4] = (Texture2D)ResourceLoader.Load("res://Sprites/Камеры/camera 5.jpg");
+		cameraTextures[5] = (Texture2D)ResourceLoader.Load("res://Sprites/Камеры/camera_remastered_6.jpg");
+		cameraTextures[6] = (Texture2D)ResourceLoader.Load("res://Sprites/Камеры/camera 7.jpg");
 		soundPlayer = GetNode<AudioStreamPlayer>($"../Sounds");
 	}
 

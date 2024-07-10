@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3c3dculxi0sl"
-path="res://.godot/imported/помеха6.png-c0a2e98afb995c99b392346d7187de7b.ctex"
+uid="uid://c8008cfmxnspn"
+path="res://.godot/imported/camera_remastered_6.jpg-4f7dd232b5cb66de73c0c26f2c1864f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/S/помеха6.png"
-dest_files=["res://.godot/imported/помеха6.png-c0a2e98afb995c99b392346d7187de7b.ctex"]
+source_file="res://Sprites/Камеры/camera_remastered_6.jpg"
+dest_files=["res://.godot/imported/camera_remastered_6.jpg-4f7dd232b5cb66de73c0c26f2c1864f5.ctex"]
 
 [params]
 

@@ -3,11 +3,6 @@ using System;
 
 public partial class Game_rules : Node2D
 {
-	public override void _Ready()
-	{
-		
-	}
-
 	public override void _Process(double delta)
 	{
 		if (Input.IsActionPressed("exit"))

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://c77mel3ucbbbu"]
+[gd_scene load_steps=24 format=3 uid="uid://c77mel3ucbbbu"]
 
 [ext_resource type="FontFile" uid="uid://cd81oo8qee17e" path="res://Fonts/CutiveMono-Regular.ttf" id="2_p4ygt"]
 [ext_resource type="Script" path="res://Code/Main_Menu_Buttons.cs" id="3_q3n2f"]
@@ -7,14 +7,6 @@
 [ext_resource type="AudioStream" uid="uid://xhtb0kyuu806" path="res://Music/ШАМПУНСКИЙ ДЕМОН.mp3" id="6_4fctf"]
 [ext_resource type="Texture2D" uid="uid://c4r4lu10uit1g" path="res://Sprites/photo_2024-05-01_09-52-21.jpg" id="6_g5i2g"]
 [ext_resource type="AudioStream" uid="uid://bsxjwmb1syq3q" path="res://Music/zvuk11.mp3" id="7_0j0yr"]
-[ext_resource type="Texture2D" uid="uid://bfxs3gfgt5d7w" path="res://Sprites/S/помеха1.png" id="8_18ojh"]
-[ext_resource type="Texture2D" uid="uid://5m5cv3uuaugu" path="res://Sprites/S/помеха2.png" id="9_dm7se"]
-[ext_resource type="Texture2D" uid="uid://de5v5p7pl3e3b" path="res://Sprites/S/помеха3.png" id="10_6w41r"]
-[ext_resource type="Texture2D" uid="uid://d3h6fwtibr4r1" path="res://Sprites/S/помеха4.png" id="11_inl0p"]
-[ext_resource type="Texture2D" uid="uid://cwfqxxywa3wuk" path="res://Sprites/S/помеха5.png" id="12_swpu6"]
-[ext_resource type="Texture2D" uid="uid://3c3dculxi0sl" path="res://Sprites/S/помеха6.png" id="13_aa73t"]
-[ext_resource type="Texture2D" uid="uid://dkfrkoi76hij1" path="res://Sprites/S/помеха7.png" id="14_4fook"]
-[ext_resource type="Texture2D" uid="uid://ct3mwdgi2jpbg" path="res://Sprites/S/помеха8.png" id="15_ksqth"]
 
 [sub_resource type="GDScript" id="GDScript_t7632"]
 
@@ -47,38 +39,6 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xcav4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ufra7"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_vv5h5"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_18ojh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_dm7se")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_6w41r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_inl0p")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_swpu6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_aa73t")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_4fook")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_ksqth")
-}],
-"loop": true,
-"name": &"default",
-"speed": 60.0
-}]
 
 [node name="Main_menu" type="Node2D"]
 texture_filter = 1
@@ -324,17 +284,6 @@ z_index = -2
 texture_filter = 1
 position = Vector2(1399, 547)
 texture = ExtResource("6_g5i2g")
-
-[node name="Background" type="AnimatedSprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.454902)
-z_index = -1
-texture_filter = 1
-texture_repeat = 3
-position = Vector2(960, 540)
-scale = Vector2(1.33287, 1.50385)
-sprite_frames = SubResource("SpriteFrames_vv5h5")
-autoplay = "default"
-frame_progress = 0.221074
 
 [connection signal="button_up" from="Main_Menu_Buttons/PlayButton" to="Main_Menu_Buttons" method="_on_play_button_button_up"]
 [connection signal="button_up" from="Main_Menu_Buttons/PlayButton" to="Night_Menu_selector" method="_on_play_button_button_up"]

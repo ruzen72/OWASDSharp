@@ -42,37 +42,37 @@ public partial class Night_Menu_selector : VBoxContainer
 	private void _on_night_2_button_button_down()
 	{
 		ChangeScene("res://Scenes/game.tscn");
-		NightSelected = 2;
+		saves.NightSelected = 2;
 	}
 	
 	private void _on_night_3_button_button_down()
 	{
 		ChangeScene("res://Scenes/game.tscn");
-		NightSelected = 3;
+		saves.NightSelected = 3;
 	}
 
 	private void _on_night_4_button_button_down()
 	{
 		ChangeScene("res://Scenes/game.tscn");
-		NightSelected = 4;
+		saves.NightSelected = 4;
 	}
 
 	private void _on_night_5_button_button_down()
 	{
 		ChangeScene("res://Scenes/game.tscn");
-		NightSelected = 5;
+		saves.NightSelected = 5;
 	}
 
 	private void _on_night_6_button_button_down()
 	{
 		ChangeScene("res://Scenes/game.tscn");
-		NightSelected = 6;
+		saves.NightSelected = 6;
 	}
 
 	private void _on_night_7_button_button_down()
 	{
 		ChangeScene("res://Scenes/game.tscn");
-		NightSelected = 7;
+		saves.NightSelected = 7;
 	}
 }	
 
