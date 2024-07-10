@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://c77mel3ucbbbu"]
+[gd_scene load_steps=33 format=3 uid="uid://c77mel3ucbbbu"]
 
 [ext_resource type="FontFile" uid="uid://cd81oo8qee17e" path="res://Fonts/CutiveMono-Regular.ttf" id="2_p4ygt"]
 [ext_resource type="Script" path="res://Code/Main_Menu_Buttons.cs" id="3_q3n2f"]
@@ -17,11 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://ct3mwdgi2jpbg" path="res://Sprites/S/помеха8.png" id="15_ksqth"]
 
 [sub_resource type="GDScript" id="GDScript_t7632"]
-script/source = "extends Node2D
-
-func _on_night_1_button_button_up():
-		get_tree().change_scene_to_file(\"res://Scenes/game.tscn\")
-"
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_woaoh"]
 
@@ -45,11 +40,13 @@ func _on_night_1_button_button_up():
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x6pei"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ierln"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_is0e4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xcav4"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ierln"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ufra7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vv5h5"]
 animations = [{
@@ -84,6 +81,7 @@ animations = [{
 }]
 
 [node name="Main_menu" type="Node2D"]
+texture_filter = 1
 script = SubResource("GDScript_t7632")
 
 [node name="Game_Name" type="Label" parent="."]
@@ -113,7 +111,7 @@ size_flags_vertical = 8
 theme_override_colors/font_color = Color(0.913725, 0.913725, 0.913725, 1)
 theme_override_fonts/font = ExtResource("2_p4ygt")
 theme_override_font_sizes/font_size = 50
-text = "v0.1 C# "
+text = "v0.1.1 C# "
 
 [node name="Main_Menu_Buttons" type="VBoxContainer" parent="."]
 anchors_preset = 1
@@ -262,9 +260,26 @@ script = ExtResource("5_sgbwa")
 [node name="Options_Label" type="Label" parent="Options_Menu"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_p4ygt")
-theme_override_font_sizes/font_size = 75
+theme_override_font_sizes/font_size = 85
 text = "Options"
 horizontal_alignment = 1
+
+[node name="Res" type="Label" parent="Options_Menu"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_p4ygt")
+theme_override_font_sizes/font_size = 50
+text = "Resolution"
+
+[node name="Resolution_Button" type="OptionButton" parent="Options_Menu"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_p4ygt")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ierln")
+flat = true
+item_count = 1
+selected = 0
+popup/item_0/text = "1920x1080"
+popup/item_0/id = 0
 
 [node name="Vsync_Button" type="CheckButton" parent="Options_Menu"]
 layout_mode = 2
@@ -284,20 +299,11 @@ button_pressed = true
 text = "Fullscreen"
 flat = true
 
-[node name="Resolution_Button" type="OptionButton" parent="Options_Menu"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_p4ygt")
-theme_override_font_sizes/font_size = 50
-theme_override_styles/focus = SubResource("StyleBoxEmpty_ierln")
-flat = true
-item_count = 1
-popup/item_0/text = "1920x1080"
-popup/item_0/id = 1
-
 [node name="Back" type="Button" parent="Options_Menu"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_p4ygt")
 theme_override_font_sizes/font_size = 75
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ufra7")
 text = "Back"
 flat = true
 alignment = 0
@@ -313,7 +319,7 @@ volume_db = -20.0
 autoplay = true
 bus = &"Music"
 
-[node name="Background1" type="Sprite2D" parent="."]
+[node name="Shampoo" type="Sprite2D" parent="."]
 z_index = -2
 texture_filter = 1
 position = Vector2(1399, 547)
@@ -335,11 +341,17 @@ frame_progress = 0.221074
 [connection signal="button_up" from="Main_Menu_Buttons/OptionsButton" to="Main_Menu_Buttons" method="_on_options_button_button_up"]
 [connection signal="button_up" from="Main_Menu_Buttons/OptionsButton" to="Options_Menu" method="_on_options_button_button_up"]
 [connection signal="button_up" from="Main_Menu_Buttons/QuitButton" to="Main_Menu_Buttons" method="_on_quit_button_button_up"]
-[connection signal="button_up" from="Night_Menu_selector/Night_1_Button" to="." method="_on_night_1_button_button_up"]
+[connection signal="button_down" from="Night_Menu_selector/Night_1_Button" to="Night_Menu_selector" method="_on_night_1_button_button_down"]
+[connection signal="button_down" from="Night_Menu_selector/Night_2_Button" to="Night_Menu_selector" method="_on_night_2_button_button_down"]
+[connection signal="button_down" from="Night_Menu_selector/Night_3_Button" to="Night_Menu_selector" method="_on_night_3_button_button_down"]
+[connection signal="button_down" from="Night_Menu_selector/Night_4_Button" to="Night_Menu_selector" method="_on_night_4_button_button_down"]
+[connection signal="button_down" from="Night_Menu_selector/Night_5_Button" to="Night_Menu_selector" method="_on_night_5_button_button_down"]
+[connection signal="button_down" from="Night_Menu_selector/Night_6_Button" to="Night_Menu_selector" method="_on_night_6_button_button_down"]
+[connection signal="button_down" from="Night_Menu_selector/Night_7_Button" to="Night_Menu_selector" method="_on_night_7_button_button_down"]
 [connection signal="button_up" from="Night_Menu_selector/BackButton" to="Main_Menu_Buttons" method="_on_back_button_button_up"]
 [connection signal="button_up" from="Night_Menu_selector/BackButton" to="Night_Menu_selector" method="_on_back_button_button_up"]
+[connection signal="item_selected" from="Options_Menu/Resolution_Button" to="Options_Menu" method="_on_option_button_item_selected"]
 [connection signal="button_up" from="Options_Menu/Vsync_Button" to="Options_Menu" method="_on_check_button_button_up"]
 [connection signal="button_up" from="Options_Menu/Fullscreen_Button" to="Options_Menu" method="_on_fullscreen_button_button_up"]
-[connection signal="item_selected" from="Options_Menu/Resolution_Button" to="Options_Menu" method="_on_option_button_item_selected"]
 [connection signal="button_up" from="Options_Menu/Back" to="Main_Menu_Buttons" method="_on_back_button_up"]
 [connection signal="button_up" from="Options_Menu/Back" to="Options_Menu" method="_on_back_button_up"]

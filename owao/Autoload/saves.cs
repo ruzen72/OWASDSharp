@@ -3,5 +3,6 @@ using System;
 
 public partial class saves : Node
 {
-	public byte NightsCompleted = 0;
+	public static byte NightSelected;
+	public static byte NightsCompleted = 0;
 }

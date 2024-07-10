@@ -11,7 +11,10 @@ config_version=5
 [application]
 
 config/name="OWASDsharp"
-config/version="0.1"
+config/name_localized={
+"ru_KZ": "Одна неделя с Демоном Жумайсынба"
+}
+config/version="0.1.1"
 run/main_scene="res://Scenes/main_menu.tscn"
 config/features=PackedStringArray("4.2", "C#", "Mobile")
 boot_splash/bg_color=Color(0, 0, 0, 1)
@@ -41,8 +44,10 @@ movie_writer/movie_file="/home/ruzen42/12f/Godot/owao/Videos/Movie.avi"
 [file_customization]
 
 folder_colors={
-"res://Fonts/": "teal",
-"res://Music/": "purple",
+"res://Code/": "teal",
+"res://Fonts/": "yellow",
+"res://Music/": "green",
+"res://Scenes/": "red",
 "res://Sprites/": "orange"
 }
 
